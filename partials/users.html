@@ -1,15 +1,20 @@
 <div class="sub_header">
     <div>
-        <div class="btn_sub" onclick="common.plot_edit_window();">Add</div>
+        <div class="btn_sub" onclick="common.user_edit_window();">Add</div>
     </div>
     <div>
         <div id="paginator">{$paginator}</div>
-        <div class="input_group">
+        <div class="input_group input_group_select">
             <i class="icon_search"></i>
-            <input id="search" type="text" value="{$search}" placeholder="Search" oninput="common.search_do('plots');">
+            <select id="search_type" onchange="common.search_do('users')">
+                <option value="phone">Phone</option>
+                <option value="first_name">Name</option>
+                <option value="email">Email</option>
+            </select>
+            <input id="search" type="text" value="{$search}" placeholder="Search" oninput="common.search_do('users')">
         </div>
     </div>
 </div>
 <div id="table">
-    {include file="./partials/plots_table.html"}
+    {include file="./partials/users_table.html"}
 </div>
